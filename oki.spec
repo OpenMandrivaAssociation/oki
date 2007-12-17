@@ -12,7 +12,6 @@ Source0:	%{name}-%{version}.tar.bz2
 Patch0:		%{name}-default-conf.patch.bz2
 URL:		http://free.of.pl/s/szatkus/oki/
 Group:		%{group}
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPL
 BuildRequires:	SDL_image-devel SDL_mixer-devel SDL-devel
 
