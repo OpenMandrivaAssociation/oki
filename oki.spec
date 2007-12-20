@@ -47,19 +47,27 @@ echo "#!/bin/sh
 cd %{_gamesdatadir}/%{name}
 ./oki_me \$*" > $RPM_BUILD_ROOT%{_gamesbindir}/%{name}_me
 chmod +x $RPM_BUILD_ROOT%{_gamesbindir}/*
-mkdir -p $RPM_BUILD_ROOT%{_iconsdir}  $RPM_BUILD_ROOT%{_menudir}
+mkdir -p $RPM_BUILD_ROOT%{_iconsdir}  $RPM_BUILD_ROOT%{_datadir}/applications
 ln -s %{_gamesdatadir}/%{name}/gfx/oki40.png $RPM_BUILD_ROOT%{_iconsdir}/oki.png
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}):command="%{name}" \
-icon="oki.png" needs="X11" section="More Applications/Games/Arcade" \
-title="Oki" \
-longtitle="Oki"
+
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Exec=%{name}
+Icon=oki
+Categories=Game;ArcadeGame;
+Name=Oki
+Comment=Oki
 EOF
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}_me
-?package(%{name}):command="%{name}_me" \
-icon="oki.png" needs="X11" section="More Applications/Games/Arcade" \
-title="Oki map editor" \
-longtitle="Oki map editor"
+
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}_me.desktop
+[Desktop Entry]
+Type=Application
+Exec=%{name}_me
+Icon=oki
+Categories=Game;ArcadeGame;
+Name=Oki map editor
+Comment=Oki map editor
 EOF
 
 %post
@@ -77,5 +85,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_gamesdatadir}/%{name}
 %{_gamesbindir}/*
 %{_iconsdir}/*
-%{_menudir}/*
+%{_datadir}/applications/mandriva-*.desktop
 
