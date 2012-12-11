@@ -1,6 +1,6 @@
 %define	name	oki
 %define	version	0.1.6
-%define	release %mkrel 4
+%define	release %mkrel 3
 %define summary Oki is a small platform game with monochrome graphics
 %define group	Games/Arcade
 
@@ -92,3 +92,41 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/*
 %{_datadir}/applications/mandriva-*.desktop
 
+
+
+%changelog
+* Wed Jul 30 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.1.6-3mdv2009.0
++ Revision: 254470
+- rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - rpm filetriggers deprecates update_menus/update_scrollkeeper/update_mime_database/update_icon_cache/update_desktop_database/post_install_gconf_schemas
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+* Thu Dec 20 2007 Thierry Vignaud <tvignaud@mandriva.com> 0.1.6-1mdv2008.1
++ Revision: 135448
+- auto-convert XDG menu entry
+- kill re-definition of %%buildroot on Pixel's request
+- import oki
+
+
+* Tue May 16 2006 Eskild Hustvedt <eskild@mandriva.org> 0.1.6-1mdk
+- New version 0.1.6
+
+* Fri May 12 2006 Eskild Hustvedt <eskild@mandriva.org> 0.1.5-5mdk
+- Yearly rebuild
+
+* Mon Mar 28 2005 Eskild Hustvedt <eskild@mandrake.org> 0.1.5-4mdk
+- %%mkrel
+
+* Thu Mar 17 2005 Eskild Hustvedt <eskild@mandrake.org> 0.1.5-3mdk
+- Rebuild
+
+* Fri Mar 11 2005 Eskild Hustvedt <eskild@mandrake.org> 0.1.5-2mdk
+- Bah, fix URL
+
+* Fri Mar 11 2005  Eskild Hustvedt <eskild@mandrake.com> 0.1.5-1mdk
+- Initial Mandrakelinux package
+- Patch0: Better default config
