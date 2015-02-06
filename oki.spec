@@ -1,6 +1,6 @@
 %define	name	oki
 %define	version	0.1.6
-%define	release %mkrel 3
+%define release 4
 %define summary Oki is a small platform game with monochrome graphics
 %define group	Games/Arcade
 
