@@ -10,7 +10,7 @@ Version:	%{version}
 Release:	%{release} 
 Source0:	%{name}-%{version}.tar.bz2
 Patch0:		%{name}-default-conf.patch.bz2
-URL:		http://free.of.pl/s/szatkus/oki/
+URL:		https://free.of.pl/s/szatkus/oki/
 Group:		%{group}
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPL
